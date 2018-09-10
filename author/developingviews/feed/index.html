@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>Sofia Tania &#8211; RIOT project log</title>
+	<atom:link href="http://riot.thoughtworksarts.io/author/developingviews/feed/" rel="self" type="application/rss+xml" />
+	<link>http://riot.thoughtworksarts.io</link>
+	<description></description>
+	<lastBuildDate>
+	Mon, 10 Sep 2018 20:39:58 +0000	</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+
+<image>
+	<url>httpsriotthoughtworksarts.files.wordpress.com/2017/10/cropped-tw-logo-modified1.png?w=32</url>
+	<title>Sofia Tania &#8211; RIOT project log</title>
+	<link>http://riot.thoughtworksarts.io</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<cloud domain='riot.thoughtworksarts.io' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<atom:link rel="search" type="application/opensearchdescription+xml" href="http://riot.thoughtworksarts.io/osd.xml" title="RIOT project log" />
+	<atom:link rel='hub' href='http://riot.thoughtworksarts.io/?pushpress=hub'/>
+	<item>
+		<title>Our &#8220;Emotional&#8221; Journey So Far</title>
+		<link>http://riot.thoughtworksarts.io/2017/11/09/our-emotional-journey-so-far/</link>
+				<comments>http://riot.thoughtworksarts.io/2017/11/09/our-emotional-journey-so-far/#respond</comments>
+				<pubDate>Thu, 09 Nov 2017 18:05:31 +0000</pubDate>
+		<dc:creator><![CDATA[Sofia Tania]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://riot.thoughtworksarts.io/?p=173</guid>
+				<description><![CDATA[My journey with the team unofficially started one night, at a gathering in the ThoughtWorks office. Andy, who’s taken note &#8230; <a class="more-link" href="http://riot.thoughtworksarts.io/2017/11/09/our-emotional-journey-so-far/">More</a>]]></description>
+								<content:encoded><![CDATA[<p>My journey with the team unofficially started one night, at a gathering in the ThoughtWorks office. Andy, who’s taken note of some fellow ThoughtWorkers with interests in Artificial Intelligence / Machine Learning, also noticed that I was in-between projects. Having gone through a few immersive theatre / “choose-your-own adventure” experiences before, when he explained that RIOT is an installation with a narrative that takes a turn depending on how you react to it with your facial expression <em>as determined by a machine</em>, it sounded both familiar enough to click and at the same time refreshingly interesting.</p>
+<p>Just like that, the next day, I started pairing with Angelica, as our mission in the overall project became clearer: improve the accuracy of the facial emotion recognition portion of the installation, to subsequently help improve the overall experience of the installation.</p>
+<p>Karen had collaborated with Dr. Hongying Meng and a few of his students on the prototype RIOT installation before, and we used that as a starting point. They had two approaches implemented on Matlab: one using a time-delay neural network (TDNN; architected based on <a href="http://ieeexplore.ieee.org/document/7090979/?part=undefined%7Csec3#sec3">this paper</a>), and another using deep learning. We did not have the source code of these Matlab implementations, but have access to a trained model (presumably from the TDNN implementation) on Matlab.</p>
+<p><strong>The Big Role of Data</strong></p>
+<p>It soon became clear to us that, like in most machine learning projects, data plays a huge part in our success / failure. This is one of our biggest challenges &#8211; there aren’t many large datasets of facial expressions with emotion labels in the first place, and the relevant datasets we found are typically made available for research purposes. But more than that, we need data to benchmark our experiments and tweaks against the system used in the prototype, because without that, we don’t even know if we’re getting closer to achieving our goal or moving away from it. We just won’t be effective.</p>
+<p>The dataset used for this benchmarking should also ideally be representative of the installation, as that is where we want this system to eventually be used and to perform well.</p>
+<p>Planning the data collection and lining things up for it to happen takes a while, so Angelica and I started exploring other machine learning approaches.</p>
+<p><strong>Facial Emotion Recognition: State of the Art</strong></p>
+<p>For us as non-specialists in the field of facial emotion recognition, what’s helped us get a sense of the best-performing approaches to the task has been mostly research papers we found on arXiv, especially ones that mentioned that their approach has done well in a competition, such as <a href="https://sites.google.com/site/emotiwchallenge/challenge-details">Emotion in the Wild</a>. Emotion in the Wild is particularly relevant to us as the competition entries are benchmarked against facial expressions taken in the wild (not in a lab setting). They’ve been semi-automatically extracted from movies, and therefore come in various lighting conditions, background, head poses, etc.</p>
+<p>A technique that I think is going to be key for us is <a href="http://vintage.winklerbros.net/Publications/emotiw2015.pdf">transfer learning</a>, which allows us to take advantage of pre-trained neural network architectures that’s been proven to work well in general image classification tasks, and retrain them to classify emotions instead. An example is <a href="https://www.tensorflow.org/tutorials/image_recognition">Inception-V3</a> which is <a href="https://www.tensorflow.org/tutorials/image_retraining">easily trainable via a few scripts in TensorFlow</a>. Keras has made it straightforward to do this with <a href="https://keras.io/applications/">even more neural network architectures</a>.</p>
+<p><strong>What Lies Ahead</strong></p>
+<p>Having explored state-of-the-art techniques in facial emotion recognition, what we’re preparing ourselves for is rapid experimentation, to find the one that works the best in our specific situation — the RIOT installation. As described above, determining which is best will require us to have our custom data set that is representative of the eventual RIOT environment.</p>
+<p>With that nailed, we will experiment further with various techniques to synthetically expanding our training dataset (random scaling, crops, brightness adjustments, etc.), feature extraction, and hyperparameters of the system. Lastly, as we’re likely to come up with a system that classifies emotion based on static images but need it to eventually analyze real-time video feed, we will experiment with various techniques to smooth out our emotion predictions within a given time window.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+							<wfw:commentRss>http://riot.thoughtworksarts.io/2017/11/09/our-emotional-journey-so-far/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						
+		<media:content url="http://0.gravatar.com/avatar/c61e588e54cef14533fc0be06acfa3b5?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">developingviews</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

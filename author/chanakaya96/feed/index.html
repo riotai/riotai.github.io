@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>chanakaya96 &#8211; RIOT project log</title>
+	<atom:link href="http://riot.thoughtworksarts.io/author/chanakaya96/feed/" rel="self" type="application/rss+xml" />
+	<link>http://riot.thoughtworksarts.io</link>
+	<description></description>
+	<lastBuildDate>
+	Mon, 10 Sep 2018 20:39:58 +0000	</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+
+<image>
+	<url>httpsriotthoughtworksarts.files.wordpress.com/2017/10/cropped-tw-logo-modified1.png?w=32</url>
+	<title>chanakaya96 &#8211; RIOT project log</title>
+	<link>http://riot.thoughtworksarts.io</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<cloud domain='riot.thoughtworksarts.io' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<atom:link rel="search" type="application/opensearchdescription+xml" href="http://riot.thoughtworksarts.io/osd.xml" title="RIOT project log" />
+	<atom:link rel='hub' href='http://riot.thoughtworksarts.io/?pushpress=hub'/>
+	<item>
+		<title>Sentimental analysis using speech</title>
+		<link>http://riot.thoughtworksarts.io/2017/11/09/sentimental-analysis-using-speech/</link>
+				<comments>http://riot.thoughtworksarts.io/2017/11/09/sentimental-analysis-using-speech/#respond</comments>
+				<pubDate>Thu, 09 Nov 2017 12:16:16 +0000</pubDate>
+		<dc:creator><![CDATA[chanakaya96]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://riot.thoughtworksarts.io/?p=77</guid>
+				<description><![CDATA[Introduction Sentiment analysis  refers to the use of natural language processing, text analysis, computational linguistics, and biometrics to systematically identify, &#8230; <a class="more-link" href="http://riot.thoughtworksarts.io/2017/11/09/sentimental-analysis-using-speech/">More</a>]]></description>
+								<content:encoded><![CDATA[<h2><strong>Introduction</strong></h2>
+<p><em>Sentiment analysis</em>  refers to the use of natural language processing, text <em>analysis</em>, computational linguistics, and biometrics to systematically identify, extract, quantify, and study affective states and subjective information.The most common of the explored and easily available are using facial, text or speech recognition. Few of the very common api can be found <a href="https://nordicapis.com/20-emotion-recognition-apis-that-will-leave-you-impressed-and-concerned/">here</a>.Sentimental analysis has been there for very long time in speech recognition, known as emotional analysis. It involves the measurement of pitch, shrillness,  keywords in speech, pace of speech etc as your input parameters for analyzing basic sentiments through speech and voice.</p>
+<h2>Methodologies</h2>
+<p>There are also many indirect ways adopted such as <strong>speech to text conversion, followed by the sentence tone analysis</strong>, example of which can be <a href="https://moods.mybluemix.net/?cm_mc_uid=91175493218515034707826&amp;cm_mc_sid_50200000=1509796847&amp;cm_mc_sid_52640000=1509796847">this</a>.This particular version uses both the <a href="https://www.ibm.com/watson/services/speech-to-text/?S_PKG=&amp;cm_mmc=Search_Google-_-Watson+Core_Watson+Core+-+Platform-_-WW_IN-_-ibm+watson+speech+to+text_Exact_&amp;cm_mmca1=000000OF&amp;cm_mmca2=10000409&amp;mkwid=a959a626-8293-43c7-8a8d-9e24d6484190%7C444%7C106181&amp;cvosrc=ppc.google.ibm%20watson%20speech%20to%20text&amp;cvo_campaign=000000OF&amp;cvo_crid=189962657733&amp;Matchtype=e&amp;cm_mmca7=9061969&amp;cm_mmca8=kwd-158307458416&amp;cm_mmca9=a959a626-8293-43c7-8a8d-9e24d6484190&amp;cm_mmca10=189962657733&amp;cm_mmca11=e">speech to text</a> as well as the <a href="https://www.ibm.com/watson/services/tone-analyzer/">tone analyser</a>  from IBM Watson.This particular version considers only the word used in the speech, neither the pitch or shrillness is considered.Another issues is the accuracy of Watson speech to text conversion; where as <a href="https://cmusphinx.github.io">CMUSphinx </a> and <a href="https://cloud.google.com/speech/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=japac-IN-all-en-dr-bkws-all-all-trial-e-dr-1002234&amp;utm_content=text-ad-none-none-DEV_c-CRE_86206418457-ADGP_BKWS+%7C+EXA+%7E+T1+-+ML_M%3A1_IN_EN_SpeechAPI-KWID_43700020285554989-kwd-295515021979&amp;userloc_9061969&amp;utm_term=KW_google%20speech%20to%20text&amp;gclid=Cj0KCQiAlpDQBRDmARIsAAW6-DMA4raRV_EVR-NCywxA4ISyGQmUab6F28nZ0O3vJLYv9EO64xtcXdQaAlP_EALw_wcB&amp;dclid=CNe18bOQsdcCFUfTjgodImYM2g">Google speech to text</a> api are better performer, google product even considers the dialect.There is a very crude custom built command line interface tool built by me  with google speech to text and the Watson tone analyser available <a href="https://github.com/Chankaya/toneAnalyser">here</a>.</p>
+<p>The <strong>problem</strong> with the approach mentioned above is that pitch is a major contributor for the expression of the emotion, which is completely lost in the speech to text conversion.The above approach can be enhanced by also recording the speech as a signal, which when further exposed to the signal processing can explain the emotion masked in the pattern of the signal.</p>
+<p>One way to improve the above mechanism can be emotion classification of the speech by <strong>deploying the statistics on fundamental frequency, energy contour, duration of silence and voice quality.</strong>Further to improve the quality many techniques are used, for example using <strong>log frequency power coefficients, exposed to the classifiers</strong> (may be Hidden Markov, etc).Other can be training a <strong>neural network over a large database of phoneme balanced words</strong>.</p>
+<p>Thus to get a better sentimental approach it is important to have the spectro-temporal analysis of the speech along with the phrase analysis from the speech.</p>
+<h2>Challenges</h2>
+<ul>
+<li> the real time dialogue exchange should have the correct sampling at correct time</li>
+<li>adjusting the power gradient as per the enviornmental noise for spectral analysis</li>
+<li>adjustment for the differences in the different dialect and languages</li>
+<li>giving correct weight to the variables if considered for multi mode approach</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Different approaches have there own challenges, for instance the speech to text model with word extraction would not imply the right sentiment in case someone saying &#8220;oh right&#8221; may have different emotion behind them, they may be in agreement with you, or may be angry.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+							<wfw:commentRss>http://riot.thoughtworksarts.io/2017/11/09/sentimental-analysis-using-speech/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						
+		<media:content url="http://0.gravatar.com/avatar/3b2dc0f0af2ded1ec6076076cb3942b8?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">chanakaya96</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>
